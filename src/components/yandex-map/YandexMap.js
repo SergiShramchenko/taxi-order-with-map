@@ -1,6 +1,9 @@
 import React from 'react';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import { YMaps, Map } from 'react-yandex-maps';
 import { connect } from 'react-redux';
+
+import TargetPlacemark from '../target-placemark';
+import CrewPlacemark from '../crew-placemark';
 
 import { getAddressInfo } from '../../redux/geo-data/geoData.actions';
 
@@ -24,29 +27,8 @@ const YandexMap = ({
         defaultState={{ center: [56.839439, 53.218803], zoom: 15 }}
         onClick={(e) => getAddressInfo(e)}
       >
-        {addresses.map(({ lat, lon, precision }) => (
-          <Placemark
-            key={lat + lon}
-            geometry={[lat, lon]}
-            options={{
-              iconColor: ` ${
-                precision === 'exact' ? 'rgb(243, 190, 76)' : 'tomato'
-              }  `,
-            }}
-          />
-        ))}
-
-        {addresses.map(({ lat, lon, precision }) =>
-          precision === 'exact'
-            ? crews_info.map(({ lat, lon, crew_id }) => (
-                <Placemark
-                  key={crew_id}
-                  geometry={[lat, lon]}
-                  options={{ iconColor: 'blue' }}
-                />
-              ))
-            : null
-        )}
+        <TargetPlacemark addresses={addresses} />
+        <CrewPlacemark addresses={addresses} crews_info={crews_info} />
       </Map>
     </YMaps>
   </div>

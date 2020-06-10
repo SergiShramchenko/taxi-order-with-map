@@ -1,4 +1,6 @@
-import { GET_ADDRES_INFO } from './geoData.types';
+import { GET_ADDRES_INFO, CLEAN_UP_GEO_DATA } from './geoData.types';
+
+import { cleanUpCrews } from '../crews/crews.actions';
 
 const apiKey = '6869388d-e68d-4721-bf0c-cdcba8c60533';
 const url = 'https://geocode-maps.yandex.ru/1.x/?format=json&apikey=';
@@ -13,6 +15,8 @@ export const getAddressInfo = (e, inputValue) => {
       let coords = e.get('coords');
       res = await fetch(`${url}${apiKey}&geocode=${coords[1]},${coords[0]}`);
     }
+
+    dispatch(cleanUpCrews());
 
     await res
       .json()
@@ -60,3 +64,7 @@ export const getAddressInfo = (e, inputValue) => {
       .catch((err) => console.error(err));
   };
 };
+
+export const cleanUpGeoData = () => ({
+  type: CLEAN_UP_GEO_DATA,
+});

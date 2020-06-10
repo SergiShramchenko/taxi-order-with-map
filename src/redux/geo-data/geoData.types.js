@@ -1,1 +1,2 @@
 export const GET_ADDRES_INFO = 'GET_ADDRES_INFO';
+export const CLEAN_UP_GEO_DATA = 'CLEAN_UP_GEO_DATA';

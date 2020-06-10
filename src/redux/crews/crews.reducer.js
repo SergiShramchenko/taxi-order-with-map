@@ -1,4 +1,4 @@
-import { CHANGE_ACTIVE_CAR } from './crews.types';
+import { CHANGE_ACTIVE_CAR, CLEAN_UP_CREWS_INFO } from './crews.types';
 
 const initialState = {
   availableCrews: {
@@ -96,6 +96,11 @@ export default (state = initialState, action) => {
             ],
           },
         },
+      };
+
+    case CLEAN_UP_CREWS_INFO:
+      return {
+        ...initialState,
       };
 
     default:

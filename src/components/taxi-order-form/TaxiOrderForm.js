@@ -23,17 +23,20 @@ const TaxiOrderForm = ({
   },
   orderTaxi,
 }) => {
-  const submitOrder = async (e) => {
+  const submitOrder = (e) => {
     e.preventDefault();
 
     const coord = addresses.map((item) => item);
     const crewId = crews_info.find(({ active }) => active);
 
-    if (!crewId) return alert('Please select the car!');
-
-    orderTaxi(source_time, coord, crewId.crew_id);
-
-    return alert('Success! Request accepted, wait!');
+    coord.map(({ precision }) => {
+      if (precision !== 'exact') return alert('Address does not exist');
+      else if (!crewId) return alert('Please select the car!');
+      else {
+        orderTaxi(source_time, coord, crewId.crew_id);
+        alert('Success! Request accepted, wait!');
+      }
+    });
   };
 
   return (

@@ -1,4 +1,4 @@
-import { GET_ADDRES_INFO } from './geoData.types';
+import { GET_ADDRES_INFO, CLEAN_UP_GEO_DATA } from './geoData.types';
 
 const initialState = {
   crewOrder: {
@@ -36,6 +36,10 @@ export default (state = initialState, action) => {
             },
           ],
         },
+      };
+    case CLEAN_UP_GEO_DATA:
+      return {
+        ...initialState,
       };
 
     default:
