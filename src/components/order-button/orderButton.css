@@ -1,0 +1,20 @@
+.order-btn {
+  width: 50%;
+  height: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: 500;
+  color: rgb(237, 240, 243);
+  border: none;
+  background-color: rgb(46, 45, 45);
+  letter-spacing: 1px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.order-btn:active {
+  background-color: rgb(78, 72, 72);
+  outline: none;
+  transition: all 0.1s;
+}

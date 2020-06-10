@@ -1,0 +1,17 @@
+.taxi-details {
+  width: 35%;
+  height: 100vh;
+  background-color: rgb(243, 190, 76);
+  text-align: center;
+  overflow: auto;
+}
+
+h3 {
+  margin-top: 50px;
+}
+
+@media (max-width: 788px) {
+  .taxi-details {
+    width: 75%;
+  }
+}

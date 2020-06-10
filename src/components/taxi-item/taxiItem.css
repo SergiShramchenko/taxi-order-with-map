@@ -1,0 +1,58 @@
+.taxi-crew-container {
+  width: 100%;
+}
+.taxi-crew-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.taxi-crews-block__item {
+  display: flex;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 25px 0;
+  margin: 0 auto;
+  font-size: 16px;
+  justify-content: space-between;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+  margin-top: 10px;
+}
+
+li:hover {
+  background-color: rgba(130, 171, 248, 0.795);
+
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.active {
+  background-color: rgb(253, 104, 77);
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+span {
+  margin-right: 10px;
+}
+
+.arrow {
+  margin-left: 20px;
+}
+
+.taxi-crews-block__item-distance {
+  display: flex;
+  align-items: flex-end;
+  font-size: 13px;
+}
+
+.taxi-crews-block__item-car-color {
+  font-size: 13px;
+  text-align: initial;
+  margin-top: 10px;
+  margin-left: 2px;
+}

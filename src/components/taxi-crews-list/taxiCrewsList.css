@@ -1,0 +1,23 @@
+ul {
+  width: 70%;
+  margin: 0 auto;
+  list-style: none;
+  margin-top: 50px;
+}
+
+@media (max-width: 1200px) {
+  ul {
+    width: 80%;
+  }
+}
+@media (max-width: 992px) {
+  ul {
+    width: 90%;
+  }
+}
+
+@media (max-width: 788px) {
+  ul {
+    width: 98%;
+  }
+}
