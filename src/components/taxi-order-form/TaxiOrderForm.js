@@ -30,11 +30,12 @@ const TaxiOrderForm = ({
     const crewId = crews_info.find(({ active }) => active);
 
     coord.map(({ precision }) => {
-      if (precision !== 'exact') return alert('Address does not exist');
+      if (precision !== 'exact')
+        return alert('No address selected. Please select an address first!');
       else if (!crewId) return alert('Please select the car!');
       else {
         orderTaxi(source_time, coord, crewId.crew_id);
-        alert('Success! Request accepted, wait!');
+        alert('Success! Request accepted, please wait!');
       }
     });
   };

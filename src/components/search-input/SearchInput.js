@@ -14,24 +14,26 @@ class SearchInput extends Component {
     } = this.props;
 
     if (prevProps.geoData.crewOrder !== crewOrder) {
-      this.setState({
-        inputValue: crewOrder.addresses.map(({ address, precision }) =>
-          precision === 'exact' ? address : ''
-        ),
-      });
+      crewOrder.addresses.map(({ address, precision }) =>
+        precision === 'exact'
+          ? this.setState({ inputValue: address, invalid: false })
+          : this.setState({ inputValue: '', invalid: true })
+          ? !precision
+          : this.setState({ invalid: false })
+      );
     }
   }
 
   handleChange = (e) =>
     this.setState({ inputValue: e.target.value, invalid: false });
 
-  handleSubmit = async (e, submitFunc) => {
+  handleSubmit = async (e, submitAddress) => {
     const { inputValue } = this.state;
 
     if (e.key === 'Enter' && inputValue) {
       e.preventDefault();
 
-      await submitFunc(e, inputValue);
+      await submitAddress(e, inputValue);
 
       const {
         geoData: {
