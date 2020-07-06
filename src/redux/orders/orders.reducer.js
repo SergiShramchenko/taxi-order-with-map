@@ -2,15 +2,15 @@ import { GET_TAXI_ORDER } from './orders.types';
 
 const initialState = {
   order: {
-    source_time: undefined,
+    source_time: null,
     addresses: [
       {
         address: '',
-        lat: undefined,
-        lon: undefined,
+        lat: null,
+        lon: null,
       },
     ],
-    crew_id: undefined,
+    crew_id: null,
   },
 };
 
