@@ -2,12 +2,12 @@ import { GET_ADDRES_INFO, CLEAN_UP_GEO_DATA } from './geoData.types';
 
 const initialState = {
   crewOrder: {
-    source_time: undefined,
+    source_time: null,
     addresses: [
       {
         address: '',
-        lat: undefined,
-        lon: undefined,
+        lat: null,
+        lon: null,
       },
     ],
   },
